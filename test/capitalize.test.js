@@ -1,33 +1,35 @@
 import capitalize from "../src/capitalize.js";
 
-test("capitalize pizza", () => {
-  expect(capitalize("pizza")).toMatch(/Pizza/);
-});
+describe("capitalize", () => {
+  test("capitalize pizza", () => {
+    expect(capitalize("pizza")).toBe("Pizza");
+  });
 
-test("already capitalized", () => {
-  expect(capitalize("Pizza")).toMatch(/Pizza/);
-});
+  test("already capitalized", () => {
+    expect(capitalize("Pizza")).toBe("Pizza");
+  });
 
-test("all caps", () => {
-  expect(capitalize("PIZZA")).toMatch(/PIZZA/);
-});
+  test("all caps", () => {
+    expect(capitalize("PIZZA")).toBe("PIZZA");
+  });
 
-test("empty string", () => {
-  expect(capitalize("")).toMatch(/^$/);
-});
+  test("empty string", () => {
+    expect(capitalize("")).toBe("");
+  });
 
-test("single letter", () => {
-  expect(capitalize("p")).toMatch(/P/);
-});
+  test("single letter", () => {
+    expect(capitalize("p")).toBe("P");
+  });
 
-test("single capitalized letter", () => {
-  expect(capitalize("P")).toMatch(/P/);
-});
+  test("single capitalized letter", () => {
+    expect(capitalize("P")).toBe("P");
+  });
 
-test("special character", () => {
-  expect(capitalize("ó")).toMatch(/Ó/);
-});
+  test("special character", () => {
+    expect(capitalize("ó")).toBe("Ó");
+  });
 
-test("non-letter first character", () => {
-  expect(capitalize("!pizza")).toMatch(/!pizza/);
+  test("non-letter first character", () => {
+    expect(capitalize("!pizza")).toBe("!pizza");
+  });
 });
